@@ -6,7 +6,7 @@ In this specific usecase, one lambda function fetches the current sensor data fr
 
 ## Timeseries sensor data in MongoDB ##
 
-To store time series data in MongoDB database, I have used this[https://www.mongodb.com/blog/post/time-series-data-and-mongodb-part-2-schema-design-best-practices] blog from MongoDB.
+To store time series data in MongoDB database, I have used [this](https://www.mongodb.com/blog/post/time-series-data-and-mongodb-part-2-schema-design-best-practices) blog from MongoDB.
 
 ## Pre-requisite ##
 
@@ -95,3 +95,8 @@ NOTE : AWSCLI, SAM CLI should be pre-configured. with credentials configured for
 
 * The database connection time takes about 1 second inside lamda. This can be improved with connection pooling.
 * Build Lambda layer so that node_modules are not required everytime.
+
+### References ###
+
+* https://www.mongodb.com/blog/post/time-series-data-and-mongodb-part-2-schema-design-best-practices
+* https://github.com/awsdocs/aws-lambda-developer-guide/tree/master/sample-apps/blank-nodejs
