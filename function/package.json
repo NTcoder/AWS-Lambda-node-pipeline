@@ -1,0 +1,10 @@
+{
+  "name": "nodejs-apig",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "aws-sdk": "2.631.0",
+    "dotenv": "8.2.0",
+    "mongodb": "3.6.0"
+  }
+}

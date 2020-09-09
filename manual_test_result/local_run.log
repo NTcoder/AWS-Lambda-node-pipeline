@@ -1,0 +1,86 @@
+^Ctarun@tarun:~/Vopak/aws-lamda-poc$ ./6-deploy-local.sh 
+Building function 'currenttempincovilha'
+Running NodejsNpmBuilder:NpmPack
+Running NodejsNpmBuilder:CopyNpmrc
+Running NodejsNpmBuilder:CopySource
+Running NodejsNpmBuilder:NpmInstall
+Running NodejsNpmBuilder:CleanUpNpmrc
+Building function 'avgtempinsfax'
+Running NodejsNpmBuilder:NpmPack
+Running NodejsNpmBuilder:CopyNpmrc
+Running NodejsNpmBuilder:CopySource
+Running NodejsNpmBuilder:NpmInstall
+Running NodejsNpmBuilder:CleanUpNpmrc
+
+Build Succeeded
+
+Built Artifacts  : .aws-sam/build
+Built Template   : .aws-sam/build/template.yaml
+
+Commands you can use next
+=========================
+[*] Invoke Function: sam local invoke
+[*] Deploy: sam deploy --guided
+    
+installing node dependencies
+npm WARN deprecated buffer@4.9.1: This version of 'buffer' is out-of-date. You must update to v4.9.2 or newer
+npm notice created a lockfile as package-lock.json. You should commit this file.
+added 34 packages from 74 contributors and audited 34 packages in 4.207s
+
+1 package is looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+installing node dependencies
+npm WARN deprecated buffer@4.9.1: This version of 'buffer' is out-of-date. You must update to v4.9.2 or newer
+npm notice created a lockfile as package-lock.json. You should commit this file.
+added 34 packages from 74 contributors and audited 34 packages in 3.918s
+
+1 package is looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+starting API server locally
+Mounting currenttempincovilha at http://127.0.0.1:3000/currenttempincovilha [GET]
+Mounting avgtempinsfax at http://127.0.0.1:3000/avgtempinsfax [GET]
+You can now browse to the above endpoints to invoke your functions. You do not need to restart/reload SAM CLI while working on your functions, changes will be reflected instantly/automatically. You only need to restart SAM CLI if you update your AWS SAM template
+2020-09-01 17:59:48  * Running on http://127.0.0.1:3000/ (Press CTRL+C to quit)
+Invoking currenttempincovilha.handler (nodejs12.x)
+Failed to download a new amazon/aws-sam-cli-emulation-image-nodejs12.x:rapid-1.1.0 image. Invoking with the already downloaded image.
+Mounting /home/tarun/Vopak/aws-lamda-poc/.aws-sam/build/currenttempincovilha as /var/task:ro,delegated inside runtime container
+START RequestId: 47c468b2-cfce-17e5-46b5-6f12671f8c14 Version: $LATEST
+2020-09-01T12:29:59.381Z        47c468b2-cfce-17e5-46b5-6f12671f8c14    INFO    ## Trying MongoDB connection
+2020-09-01T12:30:01.168Z        47c468b2-cfce-17e5-46b5-6f12671f8c14    INFO    ## MongoDB connected
+2020-09-01T12:30:01.170Z        47c468b2-cfce-17e5-46b5-6f12671f8c14    INFO    Looking for data at : 1598963401
+2020-09-01T12:30:01.322Z        47c468b2-cfce-17e5-46b5-6f12671f8c14    INFO    38.35
+END RequestId: 47c468b2-cfce-17e5-46b5-6f12671f8c14
+REPORT RequestId: 47c468b2-cfce-17e5-46b5-6f12671f8c14  Init Duration: 911.57 ms        Duration: 2181.86 ms    Billed Duration: 2200 ms        Memory Size: 128 MB     Max Memory Used: 64 MB
+2020-09-01 18:00:01 127.0.0.1 - - [01/Sep/2020 18:00:01] "GET /currenttempincovilha HTTP/1.1" 200 -
+Invoking avgtempinsfax.handler (nodejs12.x)
+Failed to download a new amazon/aws-sam-cli-emulation-image-nodejs12.x:rapid-1.1.0 image. Invoking with the already downloaded image.
+Mounting /home/tarun/Vopak/aws-lamda-poc/.aws-sam/build/avgtempinsfax as /var/task:ro,delegated inside runtime container
+START RequestId: b005745e-d1fe-1cae-acf6-127a1627762b Version: $LATEST
+2020-09-01T12:30:09.778Z        b005745e-d1fe-1cae-acf6-127a1627762b    INFO    ## Trying MongoDB connection
+2020-09-01T12:30:11.050Z        b005745e-d1fe-1cae-acf6-127a1627762b    INFO    ## MongoDB connected
+2020-09-01T12:30:11.052Z        b005745e-d1fe-1cae-acf6-127a1627762b    INFO    Looking for data between : 1598959811 : 1598963411
+2020-09-01T12:30:11.636Z        b005745e-d1fe-1cae-acf6-127a1627762b    INFO    {
+  avg: 34.52583333333333,
+  samples: 3600,
+  compute_ts: 1598963411,
+  compute_window: 3600
+}
+END RequestId: b005745e-d1fe-1cae-acf6-127a1627762b
+REPORT RequestId: b005745e-d1fe-1cae-acf6-127a1627762b  Init Duration: 889.50 ms        Duration: 2024.37 ms    Billed Duration: 2100 ms        Memory Size: 128 MB     Max Memory Used: 65 MB
+2020-09-01 18:00:12 127.0.0.1 - - [01/Sep/2020 18:00:12] "GET /avgtempinsfax HTTP/1.1" 200 -
+^Ctarun@tarun:~/Vopak/aws-lamda-poc$ ./2-deploy.sh 
+Uploading to 34c57becbe9b2ac0ffab54f44adb4f09  7527844 / 7527844.0  (100.00%)
+Successfully packaged artifacts and wrote output template to file out.yml.
+Execute the following command to deploy the packaged template
+aws cloudformation deploy --template-file /home/tarun/Vopak/aws-lamda-poc/out.yml --stack-name <YOUR STACK NAME>
+
+Waiting for changeset to be created..
+Waiting for stack create/update to complete
+Successfully created/updated stack - nodejs-apig
+tarun@tarun:~/Vopak/aws-lamda-poc$ 
