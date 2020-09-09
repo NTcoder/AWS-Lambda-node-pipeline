@@ -1,6 +1,12 @@
 # AWS Lamda in Node 12.x runtime with AWS API-gateway, MongoDB Cloud Atlas and AWS CloudFormation scripts #
 
-Create a RESTful API (built with node.js with MongoDB Atlas as DB).
+This repo is a template from AWS sample for Node. This is specially tuned to setup NodeJS with MongoDB.
+
+In this specific usecase, one lambda function fetches the current sensor data from MongoDB database, the other lambda function calculates the average temperature over a the pre-defined average window.
+
+## Timeseries sensor data in MongoDB ##
+
+To store time series data in MongoDB database, I have used this[https://www.mongodb.com/blog/post/time-series-data-and-mongodb-part-2-schema-design-best-practices] blog from MongoDB.
 
 ## Pre-requisite ##
 
@@ -19,13 +25,13 @@ AVG_WINDOW=3600
 
 * AWS Account with API-key and Secret ready
 
-### How to use simulator to generate data ###
+### How to use simulator to generate IoT sensor data ###
 
 Under /data_gen/datagen.py, edit the master settings in the main function and MongoDB uri.
 
 NOTE : This will insert 7 days of sensor data (between 25.0 and 45.0) for a device. A copy of it will be saved locally if write_file is 1. TO optimize database desing and CRUD operations, s_count_max should be adjusted.
 
-Create data for Sfax and Covilha. For this you have to run script two times.
+To create data two sensors, you have to run script two times.
 
 ```python
 python3.7 datagen.py
