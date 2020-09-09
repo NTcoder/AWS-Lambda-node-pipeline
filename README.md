@@ -83,7 +83,7 @@ NOTE : AWSCLI, SAM CLI should be pre-configured. with credentials configured for
 
 ## Who do I talk to ##
 
-* tarunnvdia@gmail.com
+* navadiatarun@gmail.com
 
 ### Improvements ###
 
