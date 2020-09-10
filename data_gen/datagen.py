@@ -14,7 +14,7 @@ class Connect(object):
         ## MONGO DB URI
         ###############################
 
-        return MongoClient("mongodb+srv://vopak-temp:vopak123@tarun-testing.5w4qu.mongodb.net/vopak?retryWrites=true&w=majority") 
+        return MongoClient("mongodb+srv://<uasername>:<password>@<cluster-name>/<collection-name>?retryWrites=true&w=majority") 
 
 def document_day(today_date_obj):
     samples = []
